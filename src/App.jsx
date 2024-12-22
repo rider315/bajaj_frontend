@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css'; // Make sure to import the CSS file
+import './App.css';
 
 const App = () => {
   const [input, setInput] = useState('');
@@ -12,32 +12,29 @@ const App = () => {
     highest_lowercase_alphabet: true
   });
   const [showDropdown, setShowDropdown] = useState(false);
-  
-  const [showResponse, setShowResponse] = useState(false); // New state to control response display
+  const [showResponse, setShowResponse] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setShowResponse(false); // Hide response initially
+    setShowResponse(false);
 
     try {
-      // Parse JSON input
       const parsedInput = JSON.parse(input);
 
-      // Make POST request to the backend
-      const res = await axios.post('https://bajaj-backend-6yya.onrender.com/bfhl', parsedInput);
+      // Get the backend URL from the environment variable
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-      
-      // Set response data and show response
+      // Use the backendUrl in your axios.post call
+      const res = await axios.post(`${backendUrl}/bfhl`, parsedInput);
+
       setResponse(res.data);
       setShowResponse(true);
 
-      // Show dropdown after response is rendered
       setTimeout(() => {
         setShowDropdown(true);
-      }, 100); // Small timeout to ensure response rendering
+      }, 100);
     } catch (err) {
-      // Handle errors
       console.error(err);
       setError('Invalid JSON or server error');
       setShowDropdown(false);
