@@ -1,0 +1,167 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #496f42;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #496f42;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-height: 80vh; /* Restricts the height of the container */
+    overflow-y: auto; /* Adds a scrollbar to the container if needed */
+}
+
+.heading {
+    font-size: 2em; /* Adjust size if necessary */
+    color: #34495e;
+    margin-bottom: 20px;
+    white-space: nowrap; /* Prevents heading from wrapping */
+    overflow: hidden; /* Prevents overflow of content */
+    text-overflow: ellipsis; /* Adds ellipsis if the text overflows */
+}
+
+.info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 5px 0;
+}
+
+.form {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textarea {
+    height: 40px;
+    font-size: 1em;
+    color: #fbfbfb;
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #2c3e50;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #34495e;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.25s, background-color 0.25s;
+}
+
+.submit-button:hover {
+    border-color: #646cff;
+    background-color: #333;
+}
+
+.error-message {
+    color: #ee1630;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.response-output {
+    text-align: left;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    color: #2c3e50;
+    white-space: pre-wrap; /* Maintains formatting of response */
+    max-width: 100%; /* Prevents overflow */
+    overflow-x: auto; /* Allows horizontal scroll for wide data */
+    max-height: 400px; /* Restricts height and allows vertical scrolling */
+    overflow-y: auto;
+}
+
+/* Dropdown container */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.dropdown-container label {
+    color: #333;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.dropdown-container input {
+    margin-right: 10px;
+}
+
+/* Orientation-specific styles */
+@media (orientation: portrait) {
+    body, html {
+        height: 100vh; /* Set the height to the full height of the viewport */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #496f42;
+    }
+}
+
+@media (orientation: landscape) {
+    body, html {
+        height: 100vh; /* Set the height to the full height of the viewport */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #496f42;
+    }
+}
+.scroll-heading {
+    font-size: 1.3em; /* Adjust size if necessary */
+    color: #34495e;
+    margin: 20px 0;
+  }
