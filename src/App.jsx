@@ -26,7 +26,7 @@ const App = () => {
       const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
       // Use the backendUrl in your axios.post call
-      const res = await axios.post(`${backendUrl}/bfhl`, parsedInput);
+      const res = await axios.post(`https://bajaj-backend-65s7.onrender.com/bfhl`, parsedInput);
 
       setResponse(res.data);
       setShowResponse(true);
